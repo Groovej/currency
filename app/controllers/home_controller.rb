@@ -1,19 +1,6 @@
 class HomeController < ApplicationController
-  require 'nokogiri'
 
   def index
-  	 #  	my_data= [
-	# 	{"currency" => 'Dollar', "country" => "USA", "back" => true, "lost"=> 22},
-	# 	{"currency" => 'Tre', "country" => "Uganda", "back" => true, "lost"=> 22},
-	# 	{"currency" => 'Hrivna', "country" => "Ukraine", "back" => true, "lost"=> 22},
-	# 	{"currency" => 'Euro', "country" => "France", "back" => true, "lost"=> 22},
-	# 	{"currency" => 'Lari', "country" => "Georgia", "back" => true, "lost"=> 52},
-	# 	{"currency" => 'regt', "country" => "re", "back" => true, "lost"=> 22},
-	# 	{"currency" => 'reds', "country" => "Cannada", "back" => true, "lost"=> 28},
-	# 	{"currency" => 'Pounds', "country" => "England", "back" => true, "lost"=> 24},
-	# 	{"currency" => 'Dollarwq', "country" => "Polland", "back" => true, "lost"=> 22},
-	# 	{"currency" => 'Dollarius', "country" => "U", "back" => true, "lost"=> 522}
-	# ]
   end
 
   def list
@@ -29,8 +16,8 @@ class HomeController < ApplicationController
 		flash[:notice] = "Data fetching from server successfull."
 		render :json => @data.to_json
 	else 
-		render nothing: true
 		flash[:error] = "Sorry, data wasn't fetching from server."
+		render nothing: true
   	end
   end
 

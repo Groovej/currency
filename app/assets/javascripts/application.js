@@ -15,11 +15,12 @@
 //= require turbolinks
 //= require_tree .
 var currencyApp = angular.module('myApp', []);
-currencyApp.controller('currencyCtrl', ["$scope, $http", function($scope, $http){
+currencyApp.controller('currencyCtrl', function($scope, $http){
 	$http.get('home/list').success(function(data){
 	$scope.currencies = data;
 	});
-}]);
+});
+currencies.$inject = ['$scope, $http'];
 
 
 $('document').ready(function(){
