@@ -1,0 +1,37 @@
+<h1>List of visited countries</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Currency</th>
+      <th>Description</th>
+      <th>Visit from</th>
+      <th>Visit to</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @countries.each do |country| %>
+      <tr>
+        <td><%= country.name %></td>
+        <td><%= country.currency %></td>
+        <td><%= country.description %></td>
+        <td><%= country.visit_from.to_s(:db) %></td>
+        <td><%= country.visit_to.to_s(:db) %></td>
+        <td></td>
+        <td><%= link_to 'Show', country %></td>
+        <td><%= link_to 'Edit', edit_country_path(country) %></td>
+        <td><%= link_to 'Delete', country, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Country', new_country_path %>

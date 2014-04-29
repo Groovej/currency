@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <title>Currency</title>
+  <%= stylesheet_link_tag    "application", mediaedia: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "angular1.2.6" %>
+  <%= javascript_include_tag "angular-route" %>
+  <%= javascript_include_tag "angular-resources" %>
+
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="logo"> </div>
+<div ng-app="myApp" id="main_container">
+<%= yield %>
+</div>
+</body>
+</html>

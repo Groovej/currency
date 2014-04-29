@@ -1,0 +1,27 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body{
+	width: 80%;
+	margin: 0 auto;
+	background-color: #dedede;
+	font-size: 87.5%; /* Base font size 14px*/
+	font-family: Arial, sans-serif;
+	line-height: 1.5;
+	text-align: left;
+	width: 80%;
+	clear: both;
+}
+.logo{
+	height:150px;
+	width: 600;
+	margin: 0 auto;
+	background-image: image-url('Header.png');
+	background-repeat: no-repeat;
+}
+.inputs{
+	width: 170px;
+	height: 30px;
+	margin: 5px;
+	padding: 5px;
+}

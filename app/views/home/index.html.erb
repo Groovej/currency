@@ -1,0 +1,29 @@
+<% if flash[:error] || flash[:notice] %>
+  <p class='error'> <%=h flash[:error] || flash[:notice]%></p>
+<% end %>
+<h1>Hello Mr.Smart</h1>
+<h3>Please select interested currency from the list bellow or use Filter input:</h3>
+
+<div ng-controller="currencyCtrl">
+<%= form_for :currency_form, :url => {:controller => "countries" , :action => "new"}  do |f| %>
+	<input type="search" ng-model="search" class="inputs">
+    	<br>
+    	<select id="currencies_select" class="inputs">
+    		<option> </option>
+    		<option data-ng-repeat="currency in currencies | filter:search" value="{{currency.Name}}">{{currency.Currency}} - {{currency.CurrencyCode}}</option>
+    	</select>
+    <br>
+	
+	<%= f.hidden_field :country_name %>
+	<%= f.hidden_field :country_currency %>
+	<div class="actions">
+    	<%= f.submit('Add country') %>
+  	</div>
+<% end %>
+
+<h2 id="contry_currency" > Currency Country is </h2>
+</div>
+<br>
+<%= link_to('to List of visited countries', {:controller => "countries", :action =>'index'} ) %> 
+		
+

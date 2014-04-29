@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  visit_from: 2014-04-27 14:26:09
+  visit_to: MyString
+  datetime: MyString
+  currency: MyString
+
+two:
+  name: MyString
+  description: MyText
+  visit_from: 2014-04-27 14:26:09
+  visit_to: MyString
+  datetime: MyString
+  currency: MyString

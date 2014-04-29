@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @currency_type.country_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @currency_type.name %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @currency_type.value %>
+</p>
+
+<%= link_to 'Edit', edit_currency_type_path(@currency_type) %> |
+<%= link_to 'Back', currency_types_path %>
