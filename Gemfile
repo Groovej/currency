@@ -32,8 +32,6 @@ gem 'jbuilder', '~> 1.2'
 gem 'nokogiri', '~>1.6.1'
 #fetching data with WDSL
 gem 'savon'
-gem 'pg'
-
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
