@@ -20,7 +20,7 @@ currencyApp.controller('currencyCtrl', function($scope, $http){
 	$scope.currencies = data;
 	});
 });
-currencies.$inject = ['$scope, $http'];
+currencies.$inject = ['$scope', '$http'];
 
 
 $('document').ready(function(){
