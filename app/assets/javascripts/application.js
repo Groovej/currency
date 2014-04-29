@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-var currencyApp = angular.module('myApp', ['ngResource']);
+var currencyApp = angular.module('myApp', []);
 currencyApp.controller('currencyCtrl', function($scope, $http){
 	$http.get('home/list').success(function(data){
 	$scope.currencies = data;
