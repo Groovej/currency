@@ -5,7 +5,7 @@ Currency::Application.routes.draw do
 
   match "countries/new" => 'countries#new', via: [:get, :post]
   match "home/list" => 'home#list', via: :get
-  get "home/index"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
