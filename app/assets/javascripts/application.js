@@ -19,8 +19,7 @@ currencyApp.controller('currencyCtrl', function($scope, $http){
 	$http.get('home/list').success(function(data){
 	$scope.currencies = data;
 	});
-});
-currencies.$inject = ['$scope', '$http'];
+}).$inject = ['$scope', '$http'];
 
 
 $('document').ready(function(){
