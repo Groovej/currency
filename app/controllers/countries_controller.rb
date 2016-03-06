@@ -6,7 +6,7 @@ class CountriesController < ApplicationController
   # GET /countries.json
   def index
     query = params[:query]
-    @counties = if query == 'visited'
+    @countries = if query == 'visited'
                   Country.visited
                 elsif query == 'remaining'
                   Country.remaining
