@@ -13,17 +13,19 @@
 
 ActiveRecord::Schema.define(version: 20140427103242) do
 
-  create_table "countries", force: true do |t|
+  create_table "countries", force: :cascade do |t|
     t.string   "name"
     t.string   "currency"
+    t.string   "currency_code"
     t.text     "description"
+    t.boolean  "visited",       default: false
     t.datetime "visit_from"
     t.datetime "visit_to"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "currency_types", force: true do |t|
+  create_table "currency_types", force: :cascade do |t|
     t.integer  "country_id"
     t.string   "name"
     t.integer  "value"
