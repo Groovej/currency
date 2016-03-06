@@ -87,7 +87,7 @@ class CountriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def country_params
-      params.require(:country).permit(:name, :description, :visit_from, :visit_to, :datetime, :currency)
+      params.require(:country).permit(:name, :description, :visited, :visit_from, :visit_to, :datetime, :currency)
     end
 
     def authenticate_me
