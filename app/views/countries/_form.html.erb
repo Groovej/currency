@@ -13,15 +13,19 @@
 
   <div class="field">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, readonly: true %>
   </div>
   <div class="field">
     <%= f.label :currency %><br>
-    <%= f.text_field :currency %>
+    <%= f.text_field :currency, readonly: true %>
+  </div>
+  <div class="chekbox">
+    <%= f.label 'Mark as visited' %>
+    <%= f.check_box :visited %>
   </div>
   <div class="field">
     <%= f.label :description %><br>
-    <%= f.text_area :description, :size => '25x10' %>
+    <%= f.text_area :description, size: '25x10' %>
   </div>
   <div class="field">
     <%= f.label :visit_from %><br>

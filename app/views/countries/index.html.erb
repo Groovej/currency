@@ -21,17 +21,15 @@
         <td><%= country.name %></td>
         <td><%= country.currency %></td>
         <td><%= country.description %></td>
-        <td><%= country.visit_from.to_s(:db) %></td>
-        <td><%= country.visit_to.to_s(:db) %></td>
+        <td><%= country.visit_from.to_s %></td>
+        <td><%= country.visit_to.to_s %></td>
         <td></td>
         <td><%= link_to 'Show', country %></td>
         <td><%= link_to 'Edit', edit_country_path(country) %></td>
         <td><%= link_to 'Delete', country, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-    <% end %>
+    <% end if @countries%>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Country', new_country_path %>

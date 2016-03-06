@@ -1,11 +1,18 @@
 class CountriesController < ApplicationController
-  before_action http_basic_authenticate_with :name=>'name', :password=>'1', except:  :index
+  before_action :authenticate_me, except: [:index, :currencies]
   before_action :set_country, only: [:show, :edit, :update, :destroy]
 
   # GET /countries
   # GET /countries.json
   def index
-    @countries = Country.all
+    query = params[:query]
+    @counties = if query == 'visited'
+                  Country.visited
+                elsif query == 'remaining'
+                  Country.remaining
+                else
+                  Country.all
+                end
   end
 
   # GET /countries/
@@ -17,7 +24,7 @@ class CountriesController < ApplicationController
   def new
     name = params[:currency_form] ? params[:currency_form]['country_currency'] : ''
     co_name = params[:currency_form] ? params[:currency_form]['country_name'] : ''
-    @country = Country.new(:name => name, :currency => co_name)
+    @country = Country.new(name: name, currency: co_name)
   end
 
   # GET /countries/1/edit
@@ -65,6 +72,13 @@ class CountriesController < ApplicationController
     end
   end
 
+  def currencies
+    data = Country.select(:name, :currency, :currency_code)
+    respond_to do |format|
+      format.json { render json: data, each_serializer: ::CurrencySerializer, root: false }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_country
@@ -74,5 +88,11 @@ class CountriesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def country_params
       params.require(:country).permit(:name, :description, :visit_from, :visit_to, :datetime, :currency)
+    end
+
+    def authenticate_me
+      authenticate_or_request_with_http_basic do |name, password|
+        name == 'admin' && password == '111'
+      end
     end
 end
