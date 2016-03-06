@@ -1,6 +1,6 @@
 <h1>List of visited countries</h1>
 
-<table>
+<table id="mytable">
   <thead>
     <tr>
       <th>Name</th>
@@ -21,8 +21,8 @@
         <td><%= country.name %></td>
         <td><%= country.currency %></td>
         <td><%= country.description %></td>
-        <td><%= country.visit_from.to_s %></td>
-        <td><%= country.visit_to.to_s %></td>
+        <td><%= country.visit_from ? country.visit_from.to_s : 'Not visited' %></td>
+        <td><%= country.visit_to ? country.visit_to.to_s : 'Not visited' %></td>
         <td></td>
         <td><%= link_to 'Show', country %></td>
         <td><%= link_to 'Edit', edit_country_path(country) %></td>
