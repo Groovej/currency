@@ -26,6 +26,19 @@ group :development, :test do
   gem 'pry', require: false
   gem 'pry-nav', require: false
   gem 'pry-doc', require: false
+  gem 'rspec-rails', '~> 3.1.0'
+  gem 'rspec-its', '~> 1.2.0'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
+  gem 'faker'
+end
+
+group :test do
+  gem 'shoulda-matchers'
+  gem 'capybara'
+  gem 'capybara-webkit'
+  gem 'selenium-webdriver'
+  gem 'capybara-screenshot'
 end
 
 group :production do
