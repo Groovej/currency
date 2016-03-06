@@ -1,8 +1,7 @@
 class Country < ActiveRecord::Base
-  # attr_accessor :name, :currency, :currencyCode
-  has_many :currencytypes
+  has_many :currency_types
 
-	validates_uniqueness_of :name, message: " --  You had this country at the list, add another name."
+	validates_uniqueness_of :name
 
   scope :visited, -> { where(visited: true) }
   scope :remaining, -> { where(visited: false) }
